@@ -10,5 +10,33 @@ pipeline {
                 }
             }
         }
+
+ stage('Deploy') {
+            steps {
+                script {
+                    def server = 'deploymentRepo' // Your Nexus server ID from settings.xml
+                    def nexusUrl = 'http://localhost:8081/repository/maven-releases/'
+                    def pom = readMavenPom file: 'pom.xml'
+                    def artifact = "${pom.artifactId}-${pom.version}.jar"
+
+                    nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: nexusUrl,
+                        groupId: pom.groupId,
+                        version: pom.version,
+                        repository: 'maven-releases',
+                        credentialsId: server,
+                        artifacts: [
+                            [artifactId: artifact,
+                             classifier: '',
+                             file: artifact,
+                             type: 'jar']
+                        ]
+                    )
+                }
+            }
+        }
     }
+    
 }

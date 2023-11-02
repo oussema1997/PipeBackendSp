@@ -27,6 +27,7 @@ pipeline {
                         version: pom.version,
                         repository: 'maven-releases',
                         credentialsId: server,
+                        username : 'admin',
                         artifacts: [
                             [artifactId: artifact,
                              classifier: '',

@@ -14,23 +14,8 @@ pipeline {
  stage('Deploy') {
             steps {
                 script {
-         
-                    nexusArtifactUploader(
-                        nexusVersion: 'nexus3',
-                        protocol: 'http',
-                        nexusUrl: nexusUrl,
-                        groupId: pom.groupId,
-                        version: pom.version,
-                        repository: 'maven-releases',
-                        credentialsId: server,
-                        username : 'admin',
-                        artifacts: [
-                            [artifactId: artifact,
-                             classifier: '',
-                             file: artifact,
-                             type: 'jar']
-                        ]
-                    )
+                    
+nexusArtifactUploader artifacts: [[artifactId: 'artifact', classifier: '', file: 'artifact', type: 'jar']], credentialsId: '', groupId: 'pom.groupId', nexusUrl: '192.168.33.15:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: 'pom.version' 
                 }
             }
         }

@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker images
-                    sh 'docker build -t SpringAppp .'
+                    sh 'sudo docker build -t SpringAppp .'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker containers using docker-compose
-                    sh 'docker-compose up -d'
+                    sh 'sudo docker-compose up -d'
                 }
             }
         }

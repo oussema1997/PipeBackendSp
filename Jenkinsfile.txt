@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker containers using docker-compose
-                    sh 'docker-compose -f docker-compose.yml up -d'
+                    sh 'docker-compose -f Docker-Compse/docker-compose.yml up -d'
                 }
             }
         }

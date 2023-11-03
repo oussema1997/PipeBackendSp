@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker images
-                    sh 'docker build -t SpringAppp .'
+                    sh 'docker build -t springappp .'
                 }
             }
         }

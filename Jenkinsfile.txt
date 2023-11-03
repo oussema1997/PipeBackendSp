@@ -15,7 +15,17 @@ pipeline {
             steps {
                 script {
                     
-nexusArtifactUploader artifacts: [[artifactId: 'DevOps_Project', classifier: '', file: 'artifact', type: 'jar']], credentialsId: '', groupId: 'pom.groupId', nexusUrl: '192.168.33.15:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: 'pom.version' 
+nexusArtifactUploader artifacts: [
+[artifactId: 'DevOps_Project',
+classifier: '', 
+file: 'target/DevOps_Project-1.0.jar', 
+type: 'jar']
+], 
+credentialsId: 'deploymentRepo', 
+groupId: 'tn.esprit', nexusUrl: '192.168.33.15:8081',
+ nexusVersion: 'nexus3', protocol: 'http',
+ repository: 'SpringApp-release',
+ version: '1.0'
                 }
             }
         }

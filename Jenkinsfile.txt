@@ -15,10 +15,20 @@ pipeline {
                 script {
                     // Build Docker images
                     sh 'docker rmi -f springappp || true'
-                    //sh 'docker build -t springappp -f DockerFile.txt .'
+                    sh 'docker build -t springappp -f DockerFile.txt .'
                 }
             }
         }
+        stage('Push image to Docker Hub') {
+    steps {
+        script {
+            withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v1/']) {
+                sh 'docker login -u oussema97 -p leilehaelaallah123'
+                sh 'docker tag springappp oussema97/v1'
+                sh 'docker push docker push oussema97/oussema-rep:v1'
+            }
+        }
+    }
         stage('Run') {
             steps {
                 script {

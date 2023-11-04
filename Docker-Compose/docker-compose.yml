@@ -1,7 +1,7 @@
 version: '3'
 services:
   spring:
-    image: springappp
+    image: oussema97/springapp:v1
     ports:
       - "8082:8082"
     depends_on:

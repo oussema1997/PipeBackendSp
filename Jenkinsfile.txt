@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run Docker containers using docker-compose
-                    sh 'cd Docker-Compse'
+                    sh 'cd Docker-Compose'
                     sh 'docker compose up -d'
                 }
             }

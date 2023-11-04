@@ -15,7 +15,7 @@ pipeline {
                 script {
                     // Build Docker images
                     sh 'docker rmi -f springappp || true'
-                    sh 'docker build -t springappp -f DockerFile.txt .'
+                    //sh 'docker build -t springappp -f DockerFile.txt .'
                 }
             }
         }

@@ -20,17 +20,17 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Docker Hub') {
-    steps {
-        script {
-            withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v2/']) {
-                sh 'docker login -u oussema97 -p leilehaelaallah123'
+     //   stage('Push image to Docker Hub') {
+    //steps {
+      //  script {
+        //    withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v2/']) {
+          //      sh 'docker login -u oussema97 -p leilehaelaallah123'
                 //sh 'docker tag springappp:latest oussema97/sprigappp'
-                sh 'docker push oussema97/springappp:latest'
-            }
-        }
-    }
-}
+            //    sh 'docker push oussema97/springappp:latest'
+            // }
+       // }
+   // }
+// }
         stage('Run') {
             steps {
                 script {

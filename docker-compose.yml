@@ -1,9 +1,7 @@
 version: '3'
 services:
   spring:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: oussema97/springappp:latest
     ports:
       - "8082:8082"
     depends_on:
@@ -13,3 +11,6 @@ services:
     image: mysql:latest
     ports:
       - "3306:3306"
+
+
+    

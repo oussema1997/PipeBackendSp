@@ -24,7 +24,7 @@ credentialsId: 'deploymentRepo',
 groupId: 'tn.esprit', nexusUrl: '192.168.33.15:8081',
  nexusVersion: 'nexus3', protocol: 'http',
  repository: 'SpringApp-release',
- version: '1.0.0'
+ version: '1.0.1'
                 }
             }
         }
